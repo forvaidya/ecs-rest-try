@@ -5,6 +5,10 @@ var app = express();
 
 app.set("port", process.env.PORT || 4000);
 
+
+app.get('/health', (req, res) => res.sendStatus(200));
+
+
 app.get('/', function (req, res) {
    res.writeHead(200, {'Content-Type': 'application/json'});
    var response = { "response" : "This is GET method." }
